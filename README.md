@@ -66,7 +66,7 @@ https://docs.whmcs.com/System_Requirements
 * Implement logic to tell if multiple payments have been made and act accordingly.
 * Clean up this super sloppy code, ugh.
 
-## Update ##
+## Updates ##
 * 03.2023 Webhook http 200 ok responce to coinbase  (this fix webhook error in coinbase)
 * 03.2023 Add payment when charge:resolved
 * 03.2023 Update status of invoice when charge:pending
