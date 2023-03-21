@@ -68,5 +68,5 @@ https://docs.whmcs.com/System_Requirements
 
 ## Updates ##
 * 03.2023 Webhook http 200 ok responce to coinbase  (this fix webhook error in coinbase)
-* 03.2023 Add payment when charge:resolved
-* 03.2023 Update status of invoice when charge:pending
+* 03.2023 Add payment when `charge:resolved`
+* 03.2023 Update status of invoice when `charge:pending`
