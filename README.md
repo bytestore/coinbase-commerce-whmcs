@@ -65,3 +65,8 @@ https://docs.whmcs.com/System_Requirements
 * Implement a Logo URL as soon as Coinbase gets around to letting us declare it for charge type transactions.
 * Implement logic to tell if multiple payments have been made and act accordingly.
 * Clean up this super sloppy code, ugh.
+
+## Update ##
+* Webhook http 200 ok responce to coinbase  (this fix webhook error in coinbase)
+* Add payment when charge:resolved
+* Update status of invoice when charge:pending
