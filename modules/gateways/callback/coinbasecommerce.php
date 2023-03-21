@@ -1,5 +1,14 @@
 <?php
 
+/**
+*****************************************
+* Authors Names:    Bytestore           *
+* Company Name:     PROFVDS             *
+* Company Email:    info@profvds.com    *
+* Company Websites: https://profvds.com *
+*****************************************
+**/
+
 /*
 <!#CR>
 ************************************************************************************************************************
@@ -83,26 +92,38 @@ $hash = $_SERVER["HTTP_X_CC_WEBHOOK_SIGNATURE"];
 switch ($success) {
     case 'charge:created': {
             $transactionStatus = "Payment created but not confirmed";
+            echo "Payment created but not confirmed";
+            http_response_code(200);
             break;
         }
     case 'charge:confirmed': {
             $transactionStatus = "Payment confirmed";
+            echo "Payment confirmed";
+            http_response_code(200);
             break;
         }
     case 'charge:failed': {
             $transactionStatus = "Payment Failed";
+            echo "Payment Failed";
+            http_response_code(200);
             break;
         }
     case 'charge:delayed': {
             $transactionStatus = "Payment has paid to late";
+            echo "Payment has paid to late";
+            http_response_code(200);
             break;
         }
     case 'charge:pending': {
             $transactionStatus = "Payment is pending";
+            echo "Payment is pending";
+            http_response_code(200);
             break;
         }
     case 'charge:resolved': {
             $transactionStatus = "Payment conflict is resolved";
+            echo "Payment conflict is resolved";
+            http_response_code(200);
             break;
         }
 }
@@ -142,6 +163,26 @@ if ($success == 'charge:confirmed') {
         $transactionId,
         $paymentAmount,
         '0.00',
-        'Bitcoins'
+        $gatewayModuleName
     );
+}
+
+if ($success == 'charge:resolved') {
+    addInvoicePayment(
+        $invoiceId,
+        $transactionId,
+        $paymentAmount,
+        '0.00',
+        $gatewayModuleName
+    );
+}
+
+//change status of invoice to "Payment pending" if waiting trasaction from coinbase
+if ($success == 'charge:pending') {
+    $command = 'UpdateInvoice';
+    $postData = array(
+        'invoiceid' => $invoiceId,
+        'status' => 'Payment Pending'
+        );
+    $results = localAPI($command, $postData);
 }
