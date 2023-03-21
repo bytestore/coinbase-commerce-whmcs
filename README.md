@@ -30,7 +30,7 @@ Contributions and requests are very welcome. Simply open an issue with as much d
 
 2. **Generate an API key** on the settings page . https://commerce.coinbase.com/dashboard/settings Keep these values super safe.
 
-3. **Get your Webhook _shared secret_** from the _Webhook subscriptions_ section on the same page as above. Keep these values super safe.
+3. **Get your Webhook _shared secret_** from the _Webhook subscriptions_  https://beta.commerce.coinbase.com/settings/notifications section on the same page as above. Keep these values super safe.
 
 4. **Clone or download this project** to your local machine or to your webserver.
 
@@ -49,9 +49,9 @@ readme into your WHMCS installation.
 
 7. **Customize your gateway settings** with the information we gathered above.
 
-8. **Update your webhook URL to point to your callback file.** Paste the full URI of where your callback file is something like: `https://www.yourwebsite.com/whmcs_root/modules/gateways/callback/coinbasecommerce.php`. So that your logs don't fill up super fast make sure you only select `charge:confirmed` and `charge:failed`. See the screenshot below for an example of how you should set up your webhook. You should now be set!
+8. **Update your webhook URL to point to your callback file.** Paste the full URI of where your callback file is something like: `https://www.yourwebsite.com/whmcs_root/modules/gateways/callback/coinbasecommerce.php`. So that your logs don't fill up super fast make sure you only select `charge:confimed`, `charge:created`, `charge:delayed`, `charge:failed`, `charge:pending`, `charge:resolved`. See the screenshot below for an example of how you should set up your webhook. You should now be set!
 
-<img src="https://i.imgur.com/qoOJlzw.jpg">
+<img src="https://i.imgur.com/2RosceR.png">
 
 ## Minimum Requirements ##
 
