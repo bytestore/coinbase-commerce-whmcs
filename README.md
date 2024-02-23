@@ -73,3 +73,4 @@ https://docs.whmcs.com/System_Requirements
 
 ## Tested on ##
 * 03.2023 whmcs 8.6.1
+* 02.2024 whmcs 8.8.0
